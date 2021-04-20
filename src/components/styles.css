@@ -224,8 +224,11 @@
  .theme-light .header-button {
 	 color: #0c0f48;
 	 background-color: #f8f9fa;
-	 border: 0px;
-	 box-shadow: 0 0 2px #ddd;
+	 border-radius: 10px;
+  margin: 10px;
+  padding: 6px 20px;
+  border-radius: 10px;
+  border: 0;
 }
  .theme-light .toggle-button-circle {
 	 height: 20px;
@@ -309,7 +312,11 @@
  .theme-dark .header-button {
 	 background-color: #2e3241;
 	 color: white;
-	 border: 0px;
+	 border-radius: 10px;
+  margin: 10px;
+  padding: 6px 20px;
+  border-radius: 10px;
+  border: 0;
 }
  .theme-dark .toggle-button-circle {
 	 height: 30px;

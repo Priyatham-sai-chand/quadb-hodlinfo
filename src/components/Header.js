@@ -1,12 +1,15 @@
-import React, { useState,Component } from 'react';
+import React, { useState,Component, useEffect } from 'react';
 import './styles.css';
 import {CircularProgressbar} from 'react-circular-progressbar';
 
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 export const Header = (props) => {
-    const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const toggle = () => setDropdownOpen(prevState => !prevState);
+    const [dropdownOpenCurrency, setDropdownOpenCurrency] = useState(false);
+    const [dropdownOpenAsset, setDropdownOpenAsset] = useState(false);
+    const [currency, setCurrency] = useState("INR");
+    const [asset, setAsset] = useState("BTC");
+  const toggleCurrency = () => setDropdownOpenCurrency(prevState => !prevState);
+  const toggleAsset = () => setDropdownOpenAsset(prevState => !prevState);
     return (
         <div style={{padding: "20px 30px 0px"}}>
             <div class=" align-items-center justify-content-sm-center row">
@@ -24,42 +27,36 @@ export const Header = (props) => {
                     </p>
                 </div>
                 <div class="text-center padding-none col-12 col-sm-12 col-md-2 col-lg-4">
-                    <div class="btn-group">
- <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
+ <ButtonDropdown isOpen={dropdownOpenCurrency} toggle={toggleCurrency} >
       <DropdownToggle caret className={"header-button"}>
-        INR
+          {currency}
       </DropdownToggle>
-      <DropdownMenu>
-        <DropdownItem>INR</DropdownItem>
+      <DropdownMenu >
+        <DropdownItem value="INR" onClick={(e) => setCurrency(e.target.value)}>INR</DropdownItem>
       </DropdownMenu>
     </ButtonDropdown>
-                    </div>
-                    &nbsp;
-                    &nbsp;
-                    <div class="btn-group">
 
- <ButtonDropdown isOpen={dropdownOpen} toggle={toggle} className={""}>
-      <DropdownToggle caret className={"header-button"}>
-        ETH
-      </DropdownToggle>
-      <DropdownMenu>
-        <DropdownItem>BTC</DropdownItem>
-        <DropdownItem>ETH</DropdownItem>
-        <DropdownItem>USDT</DropdownItem>
-        <DropdownItem>XRP</DropdownItem>
-        <DropdownItem>TRX</DropdownItem>
-        <DropdownItem>DASH</DropdownItem>
-        <DropdownItem>ZEC</DropdownItem>
-        <DropdownItem>XEM</DropdownItem>
-        <DropdownItem>IOST</DropdownItem>
-        <DropdownItem>WIN</DropdownItem>
-        <DropdownItem>BTT</DropdownItem>
-        <DropdownItem>WRX</DropdownItem>
+<ButtonDropdown isOpen={dropdownOpenAsset} toggle={toggleAsset} >
+   <DropdownToggle caret className={"header-button"}>
+     {asset}
+   </DropdownToggle>
+   <DropdownMenu>
+
+        <DropdownItem value="BTC" onClick={(e) => setAsset(e.target.value)}>BTC</DropdownItem>
+        <DropdownItem value="ETH" onClick={(e) => setAsset(e.target.value)}>ETH</DropdownItem>
+        <DropdownItem value="USDT" onClick={(e) => setAsset(e.target.value)}>USDT</DropdownItem>
+        <DropdownItem value="XRP" onClick={(e) => setAsset(e.target.value)}>XRP</DropdownItem>
+        <DropdownItem value="TRX" onClick={(e) => setAsset(e.target.value)}>TRX</DropdownItem>
+        <DropdownItem value="DASH" onClick={(e) => setAsset(e.target.value)}>DASH</DropdownItem>
+        <DropdownItem value="ZEC" onClick={(e) => setAsset(e.target.value)}>ZEC</DropdownItem>
+        <DropdownItem value="ZEC" onClick={(e) => setAsset(e.target.value)}>XEM</DropdownItem>
+        <DropdownItem value="IOST" onClick={(e) => setAsset(e.target.value)}>IOST</DropdownItem>
+        <DropdownItem value="WIN" onClick={(e) => setAsset(e.target.value)}>WIN</DropdownItem>
+        <DropdownItem value="BTT" onClick={(e) => setAsset(e.target.value)}>BTT</DropdownItem>
+        <DropdownItem value="WRX" onClick={(e) => setAsset(e.target.value)}>WRX</DropdownItem>
       </DropdownMenu>
     </ButtonDropdown>
-                    </div>
-                    <div class="btn-group"><a target="_blank" href="https://wazirx.com/invite/sp7pvbt6?utm_source=finstreet&amp;utm_medium=affiliate&amp;utm_campaign=regnow-btn" type="button" aria-haspopup="true" aria-expanded="false" class="header-button btn btn-secondary">BUY ETH</a>
-                    </div>
+                    <a target="_blank" href="" type="button" aria-haspopup="true" aria-expanded="false" class="header-button btn btn-secondary">BUY {asset}</a>
                 </div>
                 <div class="right-header col-12 col-sm-12 col-md-5 col-lg-4">
                     <div class="d-inline-flex flex-wrap align-items-center justify-content-center">
@@ -72,7 +69,7 @@ export const Header = (props) => {
                         </a>
 <div className="d-inline-flex flex-wrap align-items-center justify-content-center">
                                 <div className="progress-bar-wrapper">
-                                    <CircularProgressbar value={100} text={"4"} />
+                                    <CircularProgressbar  value={parseFloat(props.countDownTimer * 100 / 60.0)} text={`${props.countDownTimer}`}/>
                                 </div>
                             <div className="margin-10 d-inline-block">
                                 <label className="switch">

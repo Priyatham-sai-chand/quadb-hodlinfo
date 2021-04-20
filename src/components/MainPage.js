@@ -1,8 +1,14 @@
-import React, { useState, Component } from 'react';
+import React, { useState,useEffect, Component } from 'react';
 import "./styles.css";
 import {Header} from "./Header";
+import {Footer} from "./Footer";
+import 'react-circular-progressbar/dist/styles.css';
 export const MainPage = () => {
     const [isLightTheme, setIsLightTheme ] = useState(false);
+    const [countDownTimer, setCountDownTimer] = useState(60);
+  useEffect(() => {
+    countDownTimer > 0 && setTimeout(() => setCountDownTimer(countDownTimer - 1), 1000);
+  }, [countDownTimer])
 const onThemeButtonClick = () => {
     setIsLightTheme(!isLightTheme)
 
@@ -10,7 +16,7 @@ const onThemeButtonClick = () => {
     return (
         <React.Fragment>
             <div className={("theme-") + (isLightTheme ? "light" : "dark")+(" padding-bottom-50")}>
-            <Header isLightTheme={isLightTheme} onThemeButtonClick={onThemeButtonClick } />
+            <Header isLightTheme={isLightTheme} onThemeButtonClick={onThemeButtonClick } countDownTimer={countDownTimer}/>
             <div class="Container-fluid " style={{ padding: "0px 30px" }}>
                 <div class="d-flex justify-content-around align-items-center average-header" style={{ padding: "10px 0px" }}>
                     <div class="text-center">
@@ -126,6 +132,7 @@ const onThemeButtonClick = () => {
                 <a target="_blank" href="https://ftx.com/#a=finstreet">
                     <img src="BannerFTXNews.png" style={{ width: "100%" }} /></a>
             </div>
+            <Footer />
         </div>
 
         </React.Fragment>
