@@ -134,6 +134,7 @@ const onThemeButtonClick = () => {
             </div>
             <Footer />
         </div>
+        <div class="d-flex justify-content-center" style={{border:"solid 1px #191d28","background-color":"#191d28",position:"fixed",left:"0","align-items":"center",width:"100vw",height:"47px",bottom:"0","z-index":"8"}}><button class="add-button btn btn-outline-info" style={{display: "block"}}>Add hodlinfo to home screen</button></div>
 
         </React.Fragment>
     )
