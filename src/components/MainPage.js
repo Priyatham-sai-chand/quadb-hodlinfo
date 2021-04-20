@@ -1,8 +1,16 @@
 import React, { useState, Component } from 'react';
 import "./styles.css";
+import {Header} from "./Header";
 export const MainPage = () => {
+    const [isLightTheme, setIsLightTheme ] = useState(false);
+const onThemeButtonClick = () => {
+    setIsLightTheme(!isLightTheme)
+
+};
     return (
-        <React.Fragment><div class="theme-light padding-bottom-50">
+        <React.Fragment>
+            <div className={("theme-") + (isLightTheme ? "light" : "dark")+(" padding-bottom-50")}>
+            <Header isLightTheme={isLightTheme} onThemeButtonClick={onThemeButtonClick } />
             <div class="Container-fluid " style={{ padding: "0px 30px" }}>
                 <div class="d-flex justify-content-around align-items-center average-header" style={{ padding: "10px 0px" }}>
                     <div class="text-center">

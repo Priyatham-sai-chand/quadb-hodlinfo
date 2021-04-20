@@ -9,7 +9,7 @@ export class Footer extends  Component {
 
     render() {
         return(
-            <div className="d-flex align-items-center text-center">
+            <div className=" theme-light d-flex align-items-center text-center">
                 <div className="footer-text">Copyright © 2019</div>
                 <div className="footer-text">HodlInfo.com</div>
                 <div className="footer-text">Developed By <a rel="nofollow" href="https://www.quadbtech.com" target="_blank" style={{color:"#3dc6c1"}}> QuadBTech</a></div>

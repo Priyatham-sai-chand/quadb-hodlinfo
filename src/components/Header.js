@@ -1,14 +1,15 @@
 import React, { useState,Component } from 'react';
 import './styles.css';
+import {CircularProgressbar} from 'react-circular-progressbar';
 
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-export const Header = () => {
+export const Header = (props) => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggle = () => setDropdownOpen(prevState => !prevState);
     return (
         <div style={{padding: "20px 30px 0px"}}>
-            <div class="align-items-center justify-content-sm-center row">
+            <div class=" align-items-center justify-content-sm-center row">
                 <div class="text-center-sm col-12 col-sm-7 col-md-5 col-lg-4">
                     <a href="/">
                         <div class="padding-none text-center-xs col-12 col-sm-12 col-md-11 col-lg-11">
@@ -25,7 +26,7 @@ export const Header = () => {
                 <div class="text-center padding-none col-12 col-sm-12 col-md-2 col-lg-4">
                     <div class="btn-group">
  <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
-      <DropdownToggle caret>
+      <DropdownToggle caret className={"header-button"}>
         INR
       </DropdownToggle>
       <DropdownMenu>
@@ -69,10 +70,16 @@ export const Header = () => {
                                 <div class="text-nowrap d-inline-block color-white">Connect Telegram</div>
                             </div>
                         </a>
-                        <div class="margin-10 d-inline-block">
-                            <label class="switch"><input type="checkbox" />
-                                <span class="slider round"></span>
-                            </label>
+<div className="d-inline-flex flex-wrap align-items-center justify-content-center">
+                                <div className="progress-bar-wrapper">
+                                    <CircularProgressbar value={100} text={"4"} />
+                                </div>
+                            <div className="margin-10 d-inline-block">
+                                <label className="switch">
+                                    <input type="checkbox" checked={!props.isLightTheme} onChange={props.onThemeButtonClick} />
+                                    <span className="slider round"></span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>

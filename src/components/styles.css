@@ -40,6 +40,7 @@
 	 fill: #3dc6c1 !important;
 	 font-size: 44px !important;
 	 font-weight: 500;
+
 }
  .CircularProgressbar .CircularProgressbar-path {
 	 stroke: #3dc6c1 !important;
@@ -213,7 +214,6 @@
  .theme-light {
 	 background: #fff;
 	 position: relative;
-	 min-height: 100vh;
 	 color: #0c0f48;
 	 font-family: Oswald, sans-serif;
 	 font-weight: 300;
@@ -294,7 +294,6 @@
  .theme-dark {
 	 position: relative;
 	 background: #191d28;
-	 min-height: 100vh;
 	 color: white;
 	 font-family: "Oswald", sans-serif;
 }
@@ -607,7 +606,7 @@
 	 .progress-bar-wrapper {
 		 height: 25px;
 		 width: 25px;
-		 margin: 10px;
+
 	}
 	 .average-block {
 		 padding-bottom: 15px;
