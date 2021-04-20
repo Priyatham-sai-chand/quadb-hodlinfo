@@ -171,8 +171,8 @@
 }
  .header-button {
 	 margin: 10px;
-	 padding: 6px 20px;
-	 border-radius: 10px;
+	 padding: 6px 20px !important;
+	 border-radius: 10px !important;
 }
  .telegram-logo {
 	 height: 15px;
@@ -205,10 +205,10 @@
 	 color: white;
 }
  .header-telegram-button {
-	 margin: 10px;
-	 padding: 6px 20px;
-	 border-radius: 10px;
-	 background-color: #3dc6c1;
+	 margin: 10px !important;
+	 padding: 6px 20px !important;
+	 border-radius: 10px !important;
+	 background-color: #3dc6c1 !important;
 	 color: white !important;
 }
  .theme-light {
@@ -224,11 +224,8 @@
  .theme-light .header-button {
 	 color: #0c0f48;
 	 background-color: #f8f9fa;
-	 border-radius: 10px;
-  margin: 10px;
-  padding: 6px 20px;
-  border-radius: 10px;
-  border: 0;
+	    border: 0px;
+    box-shadow: 0 0 2px #dddddd;
 }
  .theme-light .toggle-button-circle {
 	 height: 20px;
@@ -315,7 +312,6 @@
 	 border-radius: 10px;
   margin: 10px;
   padding: 6px 20px;
-  border-radius: 10px;
   border: 0;
 }
  .theme-dark .toggle-button-circle {

@@ -15,7 +15,7 @@ const onThemeButtonClick = () => {
 };
     return (
         <React.Fragment>
-            <div className={("theme-") + (isLightTheme ? "light" : "dark")+(" padding-bottom-50")}>
+            <div className={("theme-") + (isLightTheme ? "light" : "dark")}>
             <Header isLightTheme={isLightTheme} onThemeButtonClick={onThemeButtonClick } countDownTimer={countDownTimer}/>
             <div class="Container-fluid " style={{ padding: "0px 30px" }}>
                 <div class="d-flex justify-content-around align-items-center average-header" style={{ padding: "10px 0px" }}>

@@ -19,14 +19,11 @@ export const Header = (props) => {
                             <img src="hodlinfo_logo.png" class="fiat-logo" style={{padding: "10px"}} />
                         </div>
                     </a>
-                    <p class="col-12 text-center-xs" style={{"font-family": "Oswald, sans-serif", "margin-top": "-18px", opacity: "0.8", "font-size": "18px", color: "gray"}}>
-                        Powered By
-                                <a class="footer-text-link" rel="nofollow" target="_blank" href="https://www.finstreet.in/" style={{color: "rgb(61, 198, 193)"}}>
-                            Finstreet
-                                     </a>
+                    <p class="col-12 text-center-xs" style={{"font-family": "Oswald, sans-serif", "margin-top": "-18px", opacity: "0.8", "font-size": "18px", color: "gray"}}>Powered By <a class="footer-text-link" rel="nofollow" target="_blank" href="https://www.finstreet.in/" style={{color: "rgb(61, 198, 193)"}}> Finstreet </a>
                     </p>
                 </div>
                 <div class="text-center padding-none col-12 col-sm-12 col-md-2 col-lg-4">
+<div class="btn-group">
  <ButtonDropdown isOpen={dropdownOpenCurrency} toggle={toggleCurrency} >
       <DropdownToggle caret className={"header-button"}>
           {currency}
@@ -35,7 +32,9 @@ export const Header = (props) => {
         <DropdownItem value="INR" onClick={(e) => setCurrency(e.target.value)}>INR</DropdownItem>
       </DropdownMenu>
     </ButtonDropdown>
+</div>
 
+<div class="btn-group">
 <ButtonDropdown isOpen={dropdownOpenAsset} toggle={toggleAsset} >
    <DropdownToggle caret className={"header-button"}>
      {asset}
@@ -56,28 +55,29 @@ export const Header = (props) => {
         <DropdownItem value="WRX" onClick={(e) => setAsset(e.target.value)}>WRX</DropdownItem>
       </DropdownMenu>
     </ButtonDropdown>
+</div>
+<div class="btn-group">
                     <a target="_blank" href="" type="button" aria-haspopup="true" aria-expanded="false" class="header-button btn btn-secondary">BUY {asset}</a>
+</div>
                 </div>
                 <div class="right-header col-12 col-sm-12 col-md-5 col-lg-4">
                     <div class="d-inline-flex flex-wrap align-items-center justify-content-center">
+                                <div className="progress-bar-wrapper">
+                                    <CircularProgressbar  value={parseFloat(props.countDownTimer * 100 / 60.0)} text={`${props.countDownTimer}`}/>
+                                </div>
                         <a class="color-white" href="/connect/telegram">
-                            <div class="header-telegram-button">
+                            <div class="d-flex telegram-logo-text header-telegram-button btn align-items-center pointer color-white">
                                 <div class="d-inline-block">
                                     <img src="telegram.png" class="telegram-logo" /></div>
                                 <div class="text-nowrap d-inline-block color-white">Connect Telegram</div>
                             </div>
                         </a>
-<div className="d-inline-flex flex-wrap align-items-center justify-content-center">
-                                <div className="progress-bar-wrapper">
-                                    <CircularProgressbar  value={parseFloat(props.countDownTimer * 100 / 60.0)} text={`${props.countDownTimer}`}/>
-                                </div>
                             <div className="margin-10 d-inline-block">
                                 <label className="switch">
                                     <input type="checkbox" checked={!props.isLightTheme} onChange={props.onThemeButtonClick} />
                                     <span className="slider round"></span>
                                 </label>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
