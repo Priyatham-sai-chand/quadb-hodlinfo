@@ -47,7 +47,6 @@
 }
  .footer {
 	 bottom: 0;
-	 position: absolute;
 	 padding: 13px;
 	 width: 100%;
 }
@@ -306,7 +305,7 @@
  .theme-dark .footer {
 	 border-top: 2px solid #2e3241;
 	 color: white;
-	 background-color: #2e3241;
+	 background-color: #191d28;
 }
  .theme-dark .header-button {
 	 background-color: #2e3241;
