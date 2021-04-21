@@ -7,6 +7,7 @@ export const MainPage = () => {
     const [isLightTheme, setIsLightTheme ] = useState(false);
     const [countDownTimer, setCountDownTimer] = useState(60);
   useEffect(() => {
+      if(countDownTimer == 0) setCountDownTimer(60);
     countDownTimer > 0 && setTimeout(() => setCountDownTimer(countDownTimer - 1), 1000);
   }, [countDownTimer])
 const onThemeButtonClick = () => {
@@ -133,8 +134,8 @@ const onThemeButtonClick = () => {
                     <img src="BannerFTXNews.png" style={{ width: "100%" }} /></a>
             </div>
             <Footer />
-        </div>
         <div class="d-flex justify-content-center" style={{border:"solid 1px #191d28","background-color":"#191d28",position:"fixed",left:"0","align-items":"center",width:"100vw",height:"47px",bottom:"0","z-index":"8"}}><button class="add-button btn btn-outline-info" style={{display: "block"}}>Add hodlinfo to home screen</button></div>
+        </div>
 
         </React.Fragment>
     )

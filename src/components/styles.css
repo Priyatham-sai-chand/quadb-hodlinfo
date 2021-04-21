@@ -305,6 +305,8 @@
 }
  .theme-dark .footer {
 	 border-top: 2px solid #2e3241;
+	 color: white;
+	 background-color: #2e3241;
 }
  .theme-dark .header-button {
 	 background-color: #2e3241;
